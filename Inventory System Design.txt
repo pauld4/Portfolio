@@ -1,0 +1,28 @@
+Retail Store Item Inventory System
+
+Objects:
+-Item
+item_id (int, primary key)
+locations (array {aisle_letter, aisle_number, section, shelf, position})
+name (string)
+image (string)
+price (int, in cents)
+qty (int)
+dpci (int)
+barcode (int)
+delivered (int, time)
+sold (int, time)
+audit (int, time)
+
+Descriptions:
+item_id - the primary key in the database, a unique number assigned to each item.
+locations - an array that holds a list of the locations where the item can be found. can include salesfloor and backroom locations. an example would be "B18 3-1-1", where B18 is the aisle letter and nummber, and 3-1-1 is the section-shelf-position. this may be changed to just be the location_id, and have a separate location object with these attributes.
+name - name of the product. a string that can hold the brand name, color, size, weight, and/or count.
+image - the filename of the image that will be displayed for the item.
+price - the cost of the item, in cents. converted to decimal form when displayed to the user.
+qty - the quantity of the item that is in the store.
+dpci - abbreviation for department (3 digits), class (2 digits), and item (4 digits). a unique 9 digit number that is displayed to the user in the form of 012-23-3456. the user can search for an item using this number in the database.
+barcode - the barcode 12 digit number of an item. used to search for when an item is scanned.
+delivered - the most recent time that the item was delivered, in unix time.
+sold - the most recent time that the item was sold, in unix time.
+audit - the most recent time that the item was counted part of inventory, in unix time.
